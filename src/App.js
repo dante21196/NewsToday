@@ -27,7 +27,7 @@ import Navbar from './components/Navbar'
 //   );
 // }
 
-export default class App extends Component{
+const App = () => {
   // state={
   //   progress : 0
   // }
@@ -37,7 +37,7 @@ export default class App extends Component{
   //    })
   // }
 
-render(){
+
     return (
       <>
         {/* <Router> */}
@@ -52,7 +52,7 @@ render(){
        <News  pagesize={8} country="in" category="general" />
       </>
     );
-  }
+  
 }
 
 
@@ -60,3 +60,4 @@ render(){
 
 
 
+export default App

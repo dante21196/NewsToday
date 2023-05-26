@@ -69,10 +69,9 @@ const News = (props) => {
   //   }
   // }
    const  fetchMoreData = async()=>{
-    
-    setPage(page+1)
-  let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=35a26bd897ee402195c7d08efaf2e463&page=${page}&pageSize=${props.pageSize}`;
+  let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=35a26bd897ee402195c7d08efaf2e463&page=${page+1}&pageSize=${props.pageSize}`;
   console.log(url)
+  setPage(page+1)
   setLoading(true)
   let data=await fetch(url);
   let parsedData= await data.json();
@@ -92,12 +91,12 @@ const News = (props) => {
     return (
      <>
       
-    <h1 className='text-center my-3'>News Today: Top {props.category} Headlines</h1>
+    <h1 className='text-center' style={{marginTop: '70px'}}>News Today: Top {props.category} Headlines</h1>
     
       <InfiniteScroll
     dataLength={articles.length}
     next={fetchMoreData}
-    hasMore={true}
+    hasMore={articles.length <= totalResults}
     loader={<Spinner/>}
     scrollableTarget="scrollableDiv"
   >
