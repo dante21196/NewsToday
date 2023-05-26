@@ -114,7 +114,7 @@ document.title = `${this.props.category} - News Today`
     <h1 className='text-center my-3'>News Today: Top {this.props.category} Headlines</h1>
     
       <InfiniteScroll
-    dataLength={this.state.articles.length}
+    dataLength={this.state.articles?this.state.articles.length: 1}
     next={this.fetchMoreData}
     hasMore={true}
     loader={<Spinner/>}
