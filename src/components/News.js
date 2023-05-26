@@ -31,6 +31,7 @@ static propTypes={
       totalResults : parsedData.totalResults,
         }
   )
+  console.log(this.state.articles)
   
  }
     async componentDidMount(){
