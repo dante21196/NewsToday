@@ -40,15 +40,16 @@ export default class App extends Component{
 render(){
     return (
       <>
-        <Router>
+        {/* <Router> */}
           <Navbar />
           {/* <LoadingBar
         color='#f11946'
         progress={this.state.progress}
         onLoaderFinished={() => this.setProgress(0)}
       /> */}
-          <AppRoutes />
-        </Router>
+          {/* <AppRoutes /> */}
+       {/* </Router> */}
+       <News  pagesize={8} country="in" category="general" />
       </>
     );
   }
